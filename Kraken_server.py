@@ -165,7 +165,7 @@ if __name__ == "__main__":
     load_dotenv(dotenv_path="kraken.env")
     SYMBOLS = json.loads(os.getenv("SYMBOLS"))
 
-    logging.info("Tracking assets: {}\n".format(SYMBOLS))
+    logging.info("Tracking assets: {}".format(SYMBOLS))
 
     Thread(target=load_data, args=(SYMBOLS,)).start()
     sleep(2)
