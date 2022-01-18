@@ -1,0 +1,15 @@
+[Unit]
+Description=Kraken
+After=multi-user.target
+
+[Service] 
+Type=simple
+Environment="DISPLAY=:1"
+Environment=XAUTHORITY=~/.Xauthority
+Environment="PYTHONPATH=$PYTHONPATH:/home/martijn/.local/lib/python3.6/site-packages"
+User=root
+WorkingDirectory=/home/martijn/projects/kraken
+ExecStart=/usr/bin/python3 kraken.py
+
+[Install]
+WantedBy=multi-user.target
